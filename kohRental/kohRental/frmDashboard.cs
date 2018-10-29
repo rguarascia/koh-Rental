@@ -65,7 +65,7 @@ namespace kohRental
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("KOH Rental Agreement Software\nCopyright Kia of Hamilton 2018\nCreated by: Ryan Guarascia", "Kia of Hamilton Rental Agreements", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("KOH Rental Agreement Software\nCopyright Kia of Hamilton 2018\nRyan Guarascia Productions", "Kia of Hamilton Rental Agreements", MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void btnNew_Click(object sender, EventArgs e)
