@@ -47,7 +47,7 @@
             this.lblVin = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dtpOut = new System.Windows.Forms.DateTimePicker();
-            this.dpIn = new System.Windows.Forms.DateTimePicker();
+            this.dtpIn = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtkmout = new System.Windows.Forms.TextBox();
@@ -253,12 +253,12 @@
             this.dtpOut.TabIndex = 19;
             this.dtpOut.Value = new System.DateTime(2018, 10, 28, 17, 32, 20, 0);
             // 
-            // dpIn
+            // dtpIn
             // 
-            this.dpIn.Location = new System.Drawing.Point(329, 102);
-            this.dpIn.Name = "dpIn";
-            this.dpIn.Size = new System.Drawing.Size(178, 20);
-            this.dpIn.TabIndex = 21;
+            this.dtpIn.Location = new System.Drawing.Point(329, 102);
+            this.dtpIn.Name = "dtpIn";
+            this.dtpIn.Size = new System.Drawing.Size(178, 20);
+            this.dtpIn.TabIndex = 21;
             // 
             // label10
             // 
@@ -271,11 +271,11 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(432, 230);
+            this.btnClose.Location = new System.Drawing.Point(388, 230);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(119, 23);
             this.btnClose.TabIndex = 22;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = "Close Rental";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnCreate_Click);
             // 
@@ -315,11 +315,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(126, 228);
+            this.button1.Location = new System.Drawing.Point(12, 228);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 27;
-            this.button1.Text = "button1";
+            this.button1.Text = "Test Button";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -334,7 +334,7 @@
             this.Controls.Add(this.txtkmout);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.dpIn);
+            this.Controls.Add(this.dtpIn);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dtpOut);
             this.Controls.Add(this.label9);
@@ -384,7 +384,7 @@
         private System.Windows.Forms.Label lblVin;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dtpOut;
-        private System.Windows.Forms.DateTimePicker dpIn;
+        private System.Windows.Forms.DateTimePicker dtpIn;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TextBox txtkmout;
