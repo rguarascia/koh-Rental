@@ -34,3 +34,4 @@ C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRent
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.csproj.CopyComplete
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.exe
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.pdb
+C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.csprojAssemblyReference.cache

@@ -54,6 +54,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtkmin = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtCC = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dtpExpiry = new System.Windows.Forms.DateTimePicker();
+            this.txtCVV = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -272,11 +278,11 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(388, 230);
+            this.btnClose.Location = new System.Drawing.Point(388, 254);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(119, 23);
             this.btnClose.TabIndex = 22;
-            this.btnClose.Text = "Close Rental";
+            this.btnClose.Text = "View Rental";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnCreate_Click);
             // 
@@ -316,11 +322,73 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "KM In";
             // 
+            // txtCC
+            // 
+            this.txtCC.Enabled = false;
+            this.txtCC.Location = new System.Drawing.Point(75, 208);
+            this.txtCC.Name = "txtCC";
+            this.txtCC.Size = new System.Drawing.Size(152, 20);
+            this.txtCC.TabIndex = 28;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Enabled = false;
+            this.label13.Location = new System.Drawing.Point(12, 211);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 13);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Credit Card";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Enabled = false;
+            this.label14.Location = new System.Drawing.Point(12, 233);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(35, 13);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Expiry";
+            // 
+            // dtpExpiry
+            // 
+            this.dtpExpiry.CustomFormat = "mm/yyyy";
+            this.dtpExpiry.Enabled = false;
+            this.dtpExpiry.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpExpiry.Location = new System.Drawing.Point(75, 233);
+            this.dtpExpiry.Name = "dtpExpiry";
+            this.dtpExpiry.Size = new System.Drawing.Size(152, 20);
+            this.dtpExpiry.TabIndex = 30;
+            // 
+            // txtCVV
+            // 
+            this.txtCVV.Enabled = false;
+            this.txtCVV.Location = new System.Drawing.Point(75, 259);
+            this.txtCVV.Name = "txtCVV";
+            this.txtCVV.Size = new System.Drawing.Size(152, 20);
+            this.txtCVV.TabIndex = 32;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Enabled = false;
+            this.label15.Location = new System.Drawing.Point(12, 262);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(28, 13);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "CVV";
+            // 
             // viewAgreemnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 263);
+            this.ClientSize = new System.Drawing.Size(517, 289);
+            this.Controls.Add(this.txtCVV);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.dtpExpiry);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtCC);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.txtkmin);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtkmout);
@@ -383,5 +451,11 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtkmin;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtCC;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DateTimePicker dtpExpiry;
+        private System.Windows.Forms.TextBox txtCVV;
+        private System.Windows.Forms.Label label15;
     }
 }

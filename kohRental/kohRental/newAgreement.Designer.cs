@@ -54,6 +54,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtkmin = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.txtCVV = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dtpExpiry = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtCC = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -254,7 +260,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(432, 230);
+            this.btnCreate.Location = new System.Drawing.Point(432, 252);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 22;
@@ -296,11 +302,67 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "KM In";
             // 
+            // txtCVV
+            // 
+            this.txtCVV.Location = new System.Drawing.Point(75, 259);
+            this.txtCVV.Name = "txtCVV";
+            this.txtCVV.Size = new System.Drawing.Size(152, 20);
+            this.txtCVV.TabIndex = 38;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 262);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(28, 13);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "CVV";
+            // 
+            // dtpExpiry
+            // 
+            this.dtpExpiry.CustomFormat = "mm/yyyy";
+            this.dtpExpiry.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpExpiry.Location = new System.Drawing.Point(75, 233);
+            this.dtpExpiry.Name = "dtpExpiry";
+            this.dtpExpiry.Size = new System.Drawing.Size(152, 20);
+            this.dtpExpiry.TabIndex = 36;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(12, 233);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(35, 13);
+            this.label14.TabIndex = 35;
+            this.label14.Text = "Expiry";
+            // 
+            // txtCC
+            // 
+            this.txtCC.Location = new System.Drawing.Point(75, 208);
+            this.txtCC.Name = "txtCC";
+            this.txtCC.Size = new System.Drawing.Size(152, 20);
+            this.txtCC.TabIndex = 34;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 211);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 13);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "Credit Card";
+            // 
             // newAgreement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 263);
+            this.ClientSize = new System.Drawing.Size(517, 288);
+            this.Controls.Add(this.txtCVV);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.dtpExpiry);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtCC);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.txtkmin);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txtkmout);
@@ -328,7 +390,7 @@
             this.Controls.Add(this.txtfname);
             this.Controls.Add(this.label1);
             this.Name = "newAgreement";
-            this.Text = "KOH Rental - Close Agreement";
+            this.Text = "KOH Rental - New Agreement";
             this.Load += new System.EventHandler(this.newAgreement_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -363,5 +425,11 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtkmin;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtCVV;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dtpExpiry;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtCC;
+        private System.Windows.Forms.Label label13;
     }
 }

@@ -81,7 +81,7 @@ namespace kohRental
             cmbCity.Items.Clear();
             using (WebClient wc = new WebClient())
             {
-                string json = wc.DownloadString("https://raw.githubusercontent.com/rguarascia/koh-Rental/master/kohRental/kohRental/bin/Debug/ca.json");
+                string json = wc.DownloadString("https://pastebin.com/raw/5VvHrWxU");
                 dynamic array = JsonConvert.DeserializeObject(json);
                 foreach (var x in array)
                 {
@@ -121,16 +121,21 @@ namespace kohRental
             else
             {
                 //insert into databases
-                int userID = insertToUser(txtfname.Text, txtlname.Text, txtPhone.Text, txtEmail.Text, txtAddress.Text, cmbCity.Items[cmbCity.SelectedIndex].ToString(), cmbProvince.Items[cmbProvince.SelectedIndex].ToString());
+                int userID = insertToUser(txtfname.Text, txtlname.Text, txtPhone.Text, txtEmail.Text, txtAddress.Text, cmbCity.Items[cmbCity.SelectedIndex].ToString(), cmbProvince.Items[cmbProvince.SelectedIndex].ToString(), txtCC.Text, dtpExpiry.Value.ToString(), txtCVV.Text);
                 if(userID != 0) //if we didnt incounter an error
                 {
                     insertToRentals(txtkmout.Text, dtpOut.Value.ToShortDateString(), lblVin.Text, userID);
+                } else
+                {
+                    MessageBox.Show("Could not find last name");
                 }
+                MessageBox.Show("Created Agreement. Make sure to refresh dashboard", "Success");
+                this.Close();
             }
-
+            
         }
 
-        private int insertToUser(string fname, string lname, string phone, string email, string address, string city, string province)
+        private int insertToUser(string fname, string lname, string phone, string email, string address, string city, string province, string cc, string expiry, string cvv)
         {
             Console.WriteLine("Getting Connection ...");
             MySqlConnection conn = dbConnect.GetDBConnection();
@@ -140,7 +145,7 @@ namespace kohRental
 
                 conn.Open();
                 MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                string sqlSelectAll = "INSERT INTO users(fname, lname, phone, email, address,city,province) VALUES (@fname, @lname, @phone, @email, @address, @city, @province)";
+                string sqlSelectAll = "INSERT INTO users(fname, lname, phone, email, address,city,province,cc,expiry,cvv) VALUES (@fname, @lname, @phone, @email, @address, @city, @province, @cc, @ex, @cvv)";
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = sqlSelectAll;
                 cmd.Parameters.AddWithValue("@fname", fname);
@@ -150,6 +155,9 @@ namespace kohRental
                 cmd.Parameters.AddWithValue("@address", address);
                 cmd.Parameters.AddWithValue("@city", city);
                 cmd.Parameters.AddWithValue("@province", province);
+                cmd.Parameters.AddWithValue("@cc", cc);
+                cmd.Parameters.AddWithValue("@ex", expiry);
+                cmd.Parameters.AddWithValue("@cvv", cvv);
                 cmd.ExecuteNonQuery();
 
                 Console.WriteLine("Connection successful!");
