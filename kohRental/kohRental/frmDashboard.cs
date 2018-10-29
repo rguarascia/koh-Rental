@@ -92,5 +92,59 @@ namespace kohRental
                 closeAgreement.Show();
             }
         }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            int row = dgvViewOpen.CurrentCell.RowIndex;
+            int userID = 0;
+
+            if(dgvViewOpen[7,row].Value.ToString() == "CLOSED")
+            {
+                userID = Int32.Parse(dgvViewOpen[1, row].Value.ToString());
+                viewAgreemnt viewAgreemnt = new viewAgreemnt(getLastName(userID));
+                viewAgreemnt.Show();
+            } else
+            {
+                MessageBox.Show("Cannot view open rental");
+            }
+        }
+
+        private string getLastName(int id)
+        {
+            string lastName = "";
+            Console.WriteLine("Getting Connection ...");
+            MySqlConnection conn = dbConnect.GetDBConnection();
+
+            try
+            {
+                Console.WriteLine("Openning Connection ...");
+
+                conn.Open();
+                MySqlDataAdapter MyDA = new MySqlDataAdapter();
+                string sqlSelectAll = "SELECT * from users WHERE userID = @id";
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = sqlSelectAll;
+                cmd.Parameters.AddWithValue("@id", id);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lastName = reader.GetString(2);
+                }
+
+                Console.WriteLine("Connection successful!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
+
+            return lastName;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

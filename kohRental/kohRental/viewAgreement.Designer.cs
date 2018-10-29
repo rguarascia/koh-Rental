@@ -1,6 +1,6 @@
 ﻿namespace kohRental
 {
-    partial class closeAgreement
+    partial class viewAgreemnt
     {
         /// <summary>
         /// Required designer variable.
@@ -254,6 +254,7 @@
             // 
             // dtpIn
             // 
+            this.dtpIn.Enabled = false;
             this.dtpIn.Location = new System.Drawing.Point(329, 102);
             this.dtpIn.Name = "dtpIn";
             this.dtpIn.Size = new System.Drawing.Size(178, 20);
@@ -262,6 +263,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Enabled = false;
             this.label10.Location = new System.Drawing.Point(262, 108);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
@@ -298,6 +300,7 @@
             // 
             // txtkmin
             // 
+            this.txtkmin.Enabled = false;
             this.txtkmin.Location = new System.Drawing.Point(329, 131);
             this.txtkmin.Name = "txtkmin";
             this.txtkmin.Size = new System.Drawing.Size(176, 20);
@@ -306,13 +309,14 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Enabled = false;
             this.label12.Location = new System.Drawing.Point(262, 134);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 13);
             this.label12.TabIndex = 25;
             this.label12.Text = "KM In";
             // 
-            // closeAgreement
+            // viewAgreemnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -343,8 +347,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtfname);
             this.Controls.Add(this.label1);
-            this.Name = "closeAgreement";
-            this.Text = "KOH Rental - Close Agreement";
+            this.Name = "viewAgreemnt";
+            this.Text = "KOH Rental - View Closed Agreement";
             this.Load += new System.EventHandler(this.newAgreement_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

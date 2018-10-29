@@ -19,7 +19,7 @@ using System.Net;
 
 namespace kohRental
 {
-    public partial class closeAgreement : Form
+    public partial class viewAgreemnt : Form
     {
         string searchProvince = "Ontario";
         string lname = "";
@@ -30,7 +30,7 @@ namespace kohRental
         Dictionary<string, string> keys = new Dictionary<string, string>();
         private int totalDaysRented;
 
-        public closeAgreement(string lastName)
+        public viewAgreemnt(string lastName)
         {
             this.lname = lastName;
             InitializeComponent();
@@ -106,7 +106,9 @@ namespace kohRental
                 while (reader.Read())
                 {
                     txtkmout.Text = reader.GetString(4);
+                    txtkmin.Text = reader.GetString(6);
                     dtpOut.Value = DateTime.Parse(reader.GetString(3));
+                    dtpIn.Value = DateTime.Parse(reader.GetString(5));
                 }
 
                 Console.WriteLine("Connection successful!");
@@ -247,16 +249,9 @@ namespace kohRental
         bool flag = false;
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            
-            foreach (Control c in Controls)
-                if (c is TextBox)
-                    if (c.Enabled == true)
-                        if (c.Text == "")
-                            flag = true;
             if(!flag)
             {
                 totalDaysRented = calculateDays();
-                updateRental();
                 preformInvoice();
             } else
             {
@@ -264,33 +259,6 @@ namespace kohRental
             }
         }
 
-        private void updateRental()
-        {
-            Console.WriteLine("Getting Connection ...");
-            MySqlConnection conn = dbConnect.GetDBConnection();
-
-            try
-            {
-                Console.WriteLine("Openning Connection ...");
-
-                conn.Open();
-                MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                string sqlSelectAll = "UPDATE rentals SET status = @close , dateIN = @date , kmIn = @km  WHERE userID = @id";
-                MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = sqlSelectAll;
-                cmd.Parameters.AddWithValue("@id", userID);
-                cmd.Parameters.AddWithValue("@date", dtpIn.Value.ToShortDateString());
-                cmd.Parameters.AddWithValue("@km", txtkmin.Text);
-                cmd.Parameters.AddWithValue("@close", "CLOSED");
-                cmd.ExecuteNonQuery();
-
-                Console.WriteLine("Connection successful!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-        }
 
         private int calculateDays()
         {

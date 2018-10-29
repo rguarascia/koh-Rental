@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -78,9 +79,9 @@ namespace kohRental
         private void changeCity()
         {
             cmbCity.Items.Clear();
-            using (StreamReader r = new StreamReader("ca.json"))
+            using (WebClient wc = new WebClient())
             {
-                string json = r.ReadToEnd();
+                string json = wc.DownloadString("https://raw.githubusercontent.com/rguarascia/koh-Rental/master/kohRental/kohRental/bin/Debug/ca.json");
                 dynamic array = JsonConvert.DeserializeObject(json);
                 foreach (var x in array)
                 {
