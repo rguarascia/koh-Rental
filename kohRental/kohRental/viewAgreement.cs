@@ -30,9 +30,9 @@ namespace kohRental
         Dictionary<string, string> keys = new Dictionary<string, string>();
         private int totalDaysRented;
 
-        public viewAgreemnt(string lastName)
+        public viewAgreemnt(int id)
         {
-            this.lname = lastName;
+            this.userID = id;
             InitializeComponent();
             ToolTip tip = new ToolTip();
             tip.SetToolTip(btnClose, "Print screen to follow");
@@ -40,33 +40,16 @@ namespace kohRental
 
         private void newAgreement_Load(object sender, EventArgs e)
         {
-            if (!lookupLastName(lname))
-            {
-                MessageBox.Show("Last name not found");
-                this.Close();
-            }
-            else
-            {
-                loadUser(useIndex);
+
+                loadUser(userID);
                 cmbProvince.SelectedIndex = 8; //auto set to ontario
                 changeCity(); //loads in the cities
                 loadVehicles(); //loads in the vehicles
-            }
+            
         }
 
-        private void loadUser(int useIndex)
+        private void loadUser(int id)
         {
-
-            string currentUser;
-            if (useIndex != 0)
-                currentUser = users[useIndex - 1].ToString();
-            else
-                currentUser = users[useIndex].ToString();
-
-            string fname = currentUser.Split('-')[0].Trim();
-            string lname = currentUser.Split('-')[1].Trim();
-            string phone = currentUser.Split('-')[2].Trim();
-
             Console.WriteLine("Getting Connection ...");
             MySqlConnection conn = dbConnect.GetDBConnection();
             try
@@ -74,13 +57,11 @@ namespace kohRental
                 Console.WriteLine("Openning Connection ...");
 
                 conn.Open();
-                string sqlSelectAll = "select * from users where fname = @fname AND lname = @lname AND phone = @phone";
+                string sqlSelectAll = "select * from users WHERE userID = @id";
 
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = sqlSelectAll;
-                cmd.Parameters.AddWithValue("@lname", lname);
-                cmd.Parameters.AddWithValue("@fname", fname);
-                cmd.Parameters.AddWithValue("@phone", phone);
+                cmd.Parameters.AddWithValue("@id", id);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -103,15 +84,21 @@ namespace kohRental
 
                 cmd = conn.CreateCommand();
                 cmd.CommandText = sqlSelectAll;
-                cmd.Parameters.AddWithValue("@id", userID);
+                cmd.Parameters.AddWithValue("@id", id);
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
                     txtkmout.Text = reader.GetString(4);
-                    txtkmin.Text = reader.GetString(6);
+                    if(reader.GetString(6) == "0")
+                        txtkmin.Text = "Still out";
+                    else 
+                        txtkmin.Text = reader.GetString(6);
                     dtpOut.Value = DateTime.Parse(reader.GetString(3));
-                    dtpIn.Value = DateTime.Parse(reader.GetString(5));
+                    if (reader.GetString(5) == "0")
+                        dtpIn.Value = DateTime.Today;
+                    else
+                        dtpIn.Value = DateTime.Parse(reader.GetString(5));
                 }
 
                 Console.WriteLine("Connection successful!");
@@ -120,61 +107,6 @@ namespace kohRental
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
-        }
-
-        private bool lookupLastName(string last)
-        {
-            Console.WriteLine("Getting Connection ...");
-            MySqlConnection conn = dbConnect.GetDBConnection();
-            int counter = 0;
-
-            try
-            {
-                Console.WriteLine("Openning Connection ...");
-
-                conn.Open();
-                MySqlDataAdapter MyDA = new MySqlDataAdapter();
-                string sqlSelectAll = "SELECT * from users where lname = @lname";
-                MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = sqlSelectAll;
-                cmd.Parameters.AddWithValue("@lname", last);
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    counter++;
-                    users.Add(reader.GetString(1) + " - " + reader.GetString(2) + " - " + reader.GetString(3));
-                }
-
-                Console.WriteLine("Connection successful!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
-
-            Console.WriteLine(counter);
-            if (counter == 1)
-            {
-                useIndex = 0;
-                return true;
-            }
-            else if (counter > 1)
-            {
-                string output = "";
-                int c = 0;
-                foreach (string x in users)
-                {
-                    output += ++c + ": " + x + "\n";
-                }
-                if(!Int32.TryParse(Microsoft.VisualBasic.Interaction.InputBox("Please select one of the following users\n" + output, "Multi user select"), out useIndex))
-                {
-
-                }
-                return true;
-            }
-            else
-                return false;
         }
         private void loadVehicles()
         {
@@ -314,6 +246,8 @@ namespace kohRental
                 .Footer("http://www.kiaofhamilton.com | The Power to Surprise")
                 .Save(filePath);
             Process.Start(filePath);
+
+
         }
     }
 }

@@ -320,7 +320,7 @@
             // 
             // dtpExpiry
             // 
-            this.dtpExpiry.CustomFormat = "mm/yyyy";
+            this.dtpExpiry.CustomFormat = "mm/yy";
             this.dtpExpiry.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpExpiry.Location = new System.Drawing.Point(75, 233);
             this.dtpExpiry.Name = "dtpExpiry";

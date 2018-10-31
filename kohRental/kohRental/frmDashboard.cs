@@ -19,6 +19,11 @@ namespace kohRental
             InitializeComponent();
         }
 
+        public void refresh()
+        {
+            frmMain_Load(null, null);
+        }
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             Console.WriteLine("Getting Connection ...");
@@ -98,15 +103,10 @@ namespace kohRental
             int row = dgvViewOpen.CurrentCell.RowIndex;
             int userID = 0;
 
-            if(dgvViewOpen[7,row].Value.ToString() == "CLOSED")
-            {
                 userID = Int32.Parse(dgvViewOpen[1, row].Value.ToString());
-                viewAgreemnt viewAgreemnt = new viewAgreemnt(getLastName(userID));
+                viewAgreemnt viewAgreemnt = new viewAgreemnt(userID);
                 viewAgreemnt.Show();
-            } else
-            {
-                MessageBox.Show("Cannot view open rental");
-            }
+            
         }
 
         private string getLastName(int id)

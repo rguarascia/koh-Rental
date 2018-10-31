@@ -261,6 +261,8 @@ namespace kohRental
                 totalDaysRented = calculateDays();
                 updateRental();
                 preformInvoice();
+                
+                this.Close();
             } else
             {
                 MessageBox.Show("Please make sure all text boxes are filled");
