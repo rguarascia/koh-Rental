@@ -57,9 +57,12 @@
             this.txtCC = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.dtpExpiry = new System.Windows.Forms.DateTimePicker();
-            this.txtCVV = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.txtMM = new System.Windows.Forms.TextBox();
+            this.txtCVV = new System.Windows.Forms.TextBox();
+            this.txtYY = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -350,15 +353,23 @@
             this.label14.TabIndex = 29;
             this.label14.Text = "Expiry";
             // 
-            // dtpExpiry
+            // label15
             // 
-            this.dtpExpiry.CustomFormat = "mm/yy";
-            this.dtpExpiry.Enabled = false;
-            this.dtpExpiry.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpExpiry.Location = new System.Drawing.Point(75, 233);
-            this.dtpExpiry.Name = "dtpExpiry";
-            this.dtpExpiry.Size = new System.Drawing.Size(152, 20);
-            this.dtpExpiry.TabIndex = 30;
+            this.label15.AutoSize = true;
+            this.label15.Enabled = false;
+            this.label15.Location = new System.Drawing.Point(12, 262);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(28, 13);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "CVC";
+            // 
+            // txtMM
+            // 
+            this.txtMM.Enabled = false;
+            this.txtMM.Location = new System.Drawing.Point(101, 233);
+            this.txtMM.Name = "txtMM";
+            this.txtMM.Size = new System.Drawing.Size(42, 20);
+            this.txtMM.TabIndex = 33;
             // 
             // txtCVV
             // 
@@ -368,24 +379,45 @@
             this.txtCVV.Size = new System.Drawing.Size(152, 20);
             this.txtCVV.TabIndex = 32;
             // 
-            // label15
+            // txtYY
             // 
-            this.label15.AutoSize = true;
-            this.label15.Enabled = false;
-            this.label15.Location = new System.Drawing.Point(12, 262);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(28, 13);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "CVV";
+            this.txtYY.Enabled = false;
+            this.txtYY.Location = new System.Drawing.Point(185, 234);
+            this.txtYY.Name = "txtYY";
+            this.txtYY.Size = new System.Drawing.Size(42, 20);
+            this.txtYY.TabIndex = 34;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Enabled = false;
+            this.label16.Location = new System.Drawing.Point(72, 236);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(25, 13);
+            this.label16.TabIndex = 35;
+            this.label16.Text = "MM";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Enabled = false;
+            this.label17.Location = new System.Drawing.Point(154, 236);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(21, 13);
+            this.label17.TabIndex = 36;
+            this.label17.Text = "YY";
             // 
             // viewAgreemnt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 289);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.txtYY);
+            this.Controls.Add(this.txtMM);
             this.Controls.Add(this.txtCVV);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.dtpExpiry);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtCC);
             this.Controls.Add(this.label13);
@@ -454,8 +486,11 @@
         private System.Windows.Forms.TextBox txtCC;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DateTimePicker dtpExpiry;
-        private System.Windows.Forms.TextBox txtCVV;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtMM;
+        private System.Windows.Forms.TextBox txtCVV;
+        private System.Windows.Forms.TextBox txtYY;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }

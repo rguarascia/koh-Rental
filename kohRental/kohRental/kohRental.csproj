@@ -41,7 +41,7 @@
     </Reference>
     <Reference Include="Invoicer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Minimalist Software\KOH-Rental\Invoicer.dll</HintPath>
+      <HintPath>..\..\..\..\DLLs to use\Invoicer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MigraDoc.DocumentObjectModel">

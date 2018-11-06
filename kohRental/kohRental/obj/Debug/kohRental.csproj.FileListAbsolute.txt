@@ -23,6 +23,7 @@ C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\bin\Debug\de\Migr
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\bin\Debug\de\MigraDoc.RtfRendering.resources.dll
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\bin\Debug\de\PdfSharp.resources.dll
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\bin\Debug\de\PdfSharp.Charting.resources.dll
+C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.csprojAssemblyReference.cache
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.viewAgreemnt.resources
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.frmMain.resources
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.closeAgreement.resources
@@ -33,4 +34,3 @@ C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRent
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.csproj.CopyComplete
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.exe
 C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.pdb
-C:\Users\Rguar\Documents\GitHub\koh-Rental\kohRental\kohRental\obj\Debug\kohRental.csprojAssemblyReference.cache

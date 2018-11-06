@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -121,7 +122,7 @@ namespace kohRental
             else
             {
                 //insert into databases
-                int userID = insertToUser(txtfname.Text, txtlname.Text, txtPhone.Text, txtEmail.Text, txtAddress.Text, cmbCity.Items[cmbCity.SelectedIndex].ToString(), cmbProvince.Items[cmbProvince.SelectedIndex].ToString(), txtCC.Text, dtpExpiry.Value.ToString(), txtCVV.Text);
+                int userID = insertToUser(txtfname.Text, txtlname.Text, txtPhone.Text, txtEmail.Text, txtAddress.Text, cmbCity.Items[cmbCity.SelectedIndex].ToString(), cmbProvince.Items[cmbProvince.SelectedIndex].ToString(), txtCC.Text, DateTime.ParseExact(txtMM.Text + "/" + txtYY.Text, "MM/yy", CultureInfo.InvariantCulture).ToString(), txtCVV.Text);
                 if(userID != 0) //if we didnt incounter an error
                 {
                     insertToRentals(txtkmout.Text, dtpOut.Value.ToShortDateString(), lblVin.Text, userID);
